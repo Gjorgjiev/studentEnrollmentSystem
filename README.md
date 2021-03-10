@@ -1,10 +1,9 @@
 Student Enrollment Platform
 
-This project contains two parts:  1)web application; 2)desktop application
+This project contains two parts:  1) web application; 2) desktop application
 
-Web application: students can do a research about the faculties in Republic of Macedonia,
+1) Web application: students can do a research about the faculties in Republic of Macedonia,
 register and login if they are about to enroll to one of the listed faculties.
-
 Once you are logged in, you can play around with the UI and enroll to one faculty of your choice.
 Once you are enrolled, you need to wait for an answer from the student service ( desktop app in this case which i will upload soon).
 
