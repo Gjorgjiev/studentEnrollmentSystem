@@ -1,8 +1,6 @@
 Student Enrollment Platform
 
-This project contains two parts: 
-  -web application
-  -desktop application
+This project contains two parts:  1)web application; 2)desktop application
 
 Web application: students can do a research about the faculties in Republic of Macedonia,
 register and login if they are about to enroll to one of the listed faculties.
