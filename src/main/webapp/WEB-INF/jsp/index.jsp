@@ -39,11 +39,6 @@
 
     </div>
 
-
-
-<%--        <h1 id="rectangle" class="text" style="padding-left: 22%; padding-top: 7.5%; z-index: -1;position: absolute">  FIND OUT MORE ABOUT OUR FACULTIES</h1>--%>
-<%--    </div>--%>
-
 </div>
 <div class="eqi-containertwo" style="margin-top: 5%"  >
 <div id="shapeaboutUS" style="float:left">
@@ -124,7 +119,7 @@
   	letter-spacing: .200rem;
   	font-size: 50;
   	color: #369;
-  	text-transform: uppercase; text-align: center;" id="demo"></h1>
+  	text-transform: uppercase; text-align: center;" id="timer"></h1>
 	      
     <div id="centerTimer" style="relative" >
         <div style="float:left; margin-left:2%;">
@@ -214,14 +209,14 @@
 				  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 				  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 				    
-				  // Output the result in an element with id="demo"
-				  document.getElementById("demo").innerHTML = days + " : " + hours + " : "
+				  // Output the result in an element with id="timer"
+				  document.getElementById("timer").innerHTML = days + " : " + hours + " : "
 				  + minutes + " : " + seconds ;
 				    
 				  // If the count down is over, write some text 
 				  if (distance < 0) {
 				    clearInterval(x);
-				    document.getElementById("demo").innerHTML = "EXPIRED";
+				    document.getElementById("timer").innerHTML = "Enrolment closed";
 				  }
 				}, 1000);
 		</script>

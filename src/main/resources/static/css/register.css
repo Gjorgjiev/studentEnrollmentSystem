@@ -102,10 +102,8 @@ h1 {
   background: inherit;
   position: absolute;
   left: -25px;
-
   right: 0;
   top: -25px;
-
   bottom: 0;
   box-shadow: inset 500px 500px 1000px 500px rgba(255,255,255,0.05);
   filter: blur(2000px);
@@ -115,7 +113,6 @@ h1 {
 #formContent {
   -webkit-border-radius: 10px 10px 10px 10px;
   border-radius: 10px 10px 10px 10px;
- 
   width: 100%;
   max-width: 500px;
   position: relative;
