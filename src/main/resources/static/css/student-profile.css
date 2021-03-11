@@ -406,7 +406,19 @@ div.content {
 
 
 
+.progress, .alert {
+  margin: 5px;
+  height: 10px;
+  width: 200px;
+  border-radius: 25px;
+  border: black solid 1px;
+}
 
+.progress-bar {
+  background-color: red;
+  height:10px;
+  width: 0px;
+}
 
 
  

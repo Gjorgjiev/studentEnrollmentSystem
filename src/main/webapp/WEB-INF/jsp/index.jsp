@@ -112,6 +112,35 @@
 
 </div >
 
+<div style="margin-top: 5%"><h3 style="margin-left:43%">ENROLMENT STARTS IN: </h3></div>
+  <div style="margin-left: 25%; width: 50%; height: 60px; 
+   background-image: url('https://c4.wallpaperflare.com/wallpaper/575/50/369/simple-background-gradient-abstract-blurred-wallpaper-preview.jpg');
+    background-repeat: no-repeat;
+    object-fit: cover;
+    ">
+  
+  	<h1 style="font-weight: normal; 
+  	font-family: Serif Times New Roman;
+  	letter-spacing: .200rem;
+  	font-size: 50;
+  	color: #369;
+  	text-transform: uppercase; text-align: center;" id="demo"></h1>
+	      
+    <div id="centerTimer" style="relative" >
+        <div style="float:left; margin-left:2%;">
+        	<h3>Days</h3>
+        </div>
+        <div style="display: inline-block;margin-left:8%">
+        	<h3>Hours</h3>
+        </div>
+        <div style="display: inline-block;margin-left:7%">
+        	<h3>Min</h3>
+        </div>
+        <div style="display: inline-block;margin-left:10%">
+        	<h3>Sec</h3>
+        </div>
+    </div>		
+   </div>  
 <div class="bottom">
 
     <h3 style="margin-left: 45%; margin-top: 2%; color: white">Connect with us</h3>
@@ -149,21 +178,59 @@
 </div>
 
 
-<script type="text/javascript">
-    let myIndex = 0;
-    carousel();
-
-    function carousel() {
-        let i;
-        let x = document.getElementsByClassName("mySlides");
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
-        }
-        myIndex++;
-        if (myIndex > x.length) {myIndex = 1}
-        x[myIndex-1].style.display = "block";
-        setTimeout(carousel, 3500);
-    }
-</script>
+		<script type="text/javascript">
+		    let myIndex = 0;
+		    carousel();
+		
+		    function carousel() {
+		        let i;
+		        let x = document.getElementsByClassName("mySlides");
+		        for (i = 0; i < x.length; i++) {
+		            x[i].style.display = "none";
+		        }
+		        myIndex++;
+		        if (myIndex > x.length) {myIndex = 1}
+		        x[myIndex-1].style.display = "block";
+		        setTimeout(carousel, 3500);
+		    }
+		</script>
+		
+		<script type="text/javascript">
+		
+				var countDownDate = new Date("Aug 15, 2021 00:00:25").getTime();
+				
+				// Update the count down every 1 second
+				var x = setInterval(function() {
+				
+				  // Get today's date and time
+				  var now = new Date().getTime();
+				    
+				  // Find the distance between now and the count down date
+				  var distance = countDownDate - now;
+				    
+				  // Time calculations for days, hours, minutes and seconds
+				  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+				  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+				  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+				    
+				  // Output the result in an element with id="demo"
+				  document.getElementById("demo").innerHTML = days + " : " + hours + " : "
+				  + minutes + " : " + seconds ;
+				    
+				  // If the count down is over, write some text 
+				  if (distance < 0) {
+				    clearInterval(x);
+				    document.getElementById("demo").innerHTML = "EXPIRED";
+				  }
+				}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+	
+		</script>
+		
+		
+		
 </body>
 </html>

@@ -42,6 +42,10 @@ public class StudentApplicationService {
 	public List<StudentApplication> getItems(Student student){
 		return repo.findAll();
 	}
+	
+	public StudentApplication getStatus(StudentApplication s) {
+		return repo.findByStatus(s);
+	}
 
 	public Optional<StudentApplication> getFile(Long id) {
 		return repo.findById(id);

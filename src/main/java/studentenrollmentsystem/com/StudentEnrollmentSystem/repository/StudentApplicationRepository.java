@@ -35,4 +35,8 @@ public interface StudentApplicationRepository extends JpaRepository<StudentAppli
 	
 	@Query(" FROM StudentApplication WHERE id= :id")
 	public StudentApplication getStudents(Long id);
+	
+	
+	
+	public StudentApplication findByStatus(StudentApplication s);
 }

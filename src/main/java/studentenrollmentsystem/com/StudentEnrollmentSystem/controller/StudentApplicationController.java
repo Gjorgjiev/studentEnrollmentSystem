@@ -43,7 +43,7 @@ public class StudentApplicationController {
 	
 	@RequestMapping(path = "/enrollment", method = RequestMethod.GET)
 	public String getEnrollment(Model model) {
-		List<StudentApplication> studentApps = enrollService.getFiles();
+		List<StudentApplication> studentApps = enrollService.getFiles();		
 		model.addAttribute("studentApps", studentApps);
 		return "enrollment";
 	}
@@ -61,13 +61,14 @@ public class StudentApplicationController {
 
 		session.getAttribute("student");
 		Set<StudentApplication> studentApplications = enrollService.getApps(student.getId());
+		
 		model.addAttribute("studentApplications", studentApplications);
 		model.addAttribute("message", "Your application has been submited");
 		return "student-profile";
 	}
 
 	@RequestMapping(path = "/download", method = RequestMethod.GET)
-	public void downloadFile(@Param("id") Long id, HttpServletResponse response) throws Exception {
+	public void downloadFile(@Param("id") Long id, HttpServletResponse response, Model model) throws Exception {
 		Optional<StudentApplication> result =repo.findById(id);
 		if(!result.isPresent()){//TODO vtor parametar imeto na file-ot
 			throw new Exception("Could not find document with id: " + id);

@@ -1,5 +1,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 <!-- Bootstrap CSS -->
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css'>
@@ -78,7 +79,7 @@
 						<td>${student.address}</td>
 					<tr>
 					<tr>
-						<th style="font-size: 15px"><img src="https://icons.iconarchive.com/icons/custom-icon-design/pretty-office-7/128/Calendar-icon.png" width="24"> Birthday</th>
+						<th style="font-size: 15px"><img src="https://icons.iconarchive.com/icons/custom-icon-design/pretty-office-7/128/Calendar-icon.png" width="24"> Age</th>
 						<td>${student.age}</td>
 					<tr>
 				
@@ -110,7 +111,8 @@
 							<th></th>
 							<c:forEach items="${studentApplications}" var="studentApplication">
 							<td style="font-size: 15px">${studentApplication.faculty}</td></tr>	
-							</c:forEach> 
+							</c:forEach>
+							 
 						
 							
 						<tr><th style="font-size: 15px"><img src="https://icons.iconarchive.com/icons/dario-arnaez/genesis-3G/128/User-Files-icon.png"  width="24"> 
@@ -188,10 +190,12 @@
 					 <table class="table " style="margin-top: 10%">
 						<thead>
 							<tbody>
+							<c:forEach items="${studentApplications}" var="studentApplication">
+							<tr><th style="font-size: 15px">Status:    ${studentApplication.status}</th></tr>
 							
-							<tr><th style="font-size: 15px">Accepted</th></tr>
-							
-							<tr><th style="font-size: 15px">Rejected</th></tr>
+							<th style="font-size: 15px"></th>
+							</c:forEach>
+													
 							</tbody>
 					</table>		
 			</div>
@@ -221,6 +225,46 @@
 		progressBarFull.style.width = `${(100 * 2) }`;
 		}
 
+	</script>
+	
+	<script type="text/javascript">
+			var $progress = $('.progress');
+			var $progressBar = $('.progress-bar');
+			
+				
+				$('#submit').click(function(){
+			  // Get widths 
+			  var currentWidth = parseInt($progressBar.css('width'));
+			  var allowedWidth = parseInt($progress.css('width'));
+			  
+			  // Add width from quantity input
+			  var addedWidth = currentWidth + parseInt($quantity.val());
+			 
+			  // Set to 100% if user added more than allowed
+			  if (addedWidth > allowedWidth) {
+			    addedWidth = allowedWidth;
+			  }
+			 
+			  // Normalize, to calculate actual percentage: if progress is 200px but user adds 100 it will add 50%
+			  var progress = (addedWidth / allowedWidth) * 100;
+			
+			  //  For now we will add the progress from outside of ajax call
+			  $progressBar.animate({width: progress + '%' }, 100);
+			  
+			  // Ajax call
+			  $.get('/blabla', { 
+			    firstName: $firstName.val(),
+			    lastName: $lastName.val(), 
+			    email: $email.val(), 
+			    quantity: $quantity.val() })
+			  .done(function(){
+			    // Ajax Success
+			    // You shoud move the progress bar animate here
+			    // $progressBar.animate({width: progress + '%' }, 100); 
+			  }).fail(function(){
+			    // Ajax failed
+			  })
+			})
 	</script>
 	
 	
