@@ -8,8 +8,6 @@ Once you are logged in, you can play around with the UI and enroll to one facult
 Once you are enrolled, you need to wait for an answer from the student service ( ).
 
 
-Go to 'master' branch
-
 Download the project and run it.
 
 Open your browser on 'localhost:8080'
